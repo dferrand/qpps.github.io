@@ -52,6 +52,7 @@ export const load: Load = async ({ fetch }) => {
                     rperf: p.smt8Rperf ? p.smt8Rperf : p.smt4Rperf,
                     maxCoresPerIbmiLpar: p.maxCoresPerIbmiLpar,
                     maxAixIbmiCorePercent: p.maxAixIbmiCorePercent,
+                    maxIbmiVirtualProcessors: p.maxIbmiVirtualProcessors,
                     viosOnlyIbmi: p.viosOnlyIbmi === true,
                     ibmiTier: p.ibmiTier
                 }

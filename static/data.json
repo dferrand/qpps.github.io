@@ -7,6 +7,53 @@
             "minEntitlement": 0.05,
             "models": [
                 {
+                    "type": "9242",
+                    "model": "21B",
+                    "name": "S1112",
+                    "processors": [
+                        {
+                            "name": "EJMT",
+                            "baseFrequency": "3.6",
+                            "maxFrequency": "4.0",
+                            "minSockets": 1,
+                            "maxSockets": 1,
+                            "coresPerSocket": 4,
+                            "cpw": 117300,
+                            "ibmiTier": "P05",
+                            "maxIbmiVirtualProcessors": 4
+                        },
+                        {
+                            "name": "EJSV",
+                            "baseFrequency": "3.05",
+                            "maxFrequency": "4.0",
+                            "minSockets": 1,
+                            "maxSockets": 1,
+                            "coresPerSocket": 10,
+                            "cpw": 291250,
+                            "ibmiTier": "P05",
+                            "maxIbmiVirtualProcessors": 4
+                        }
+                    ]
+                },
+                {
+                    "type": "9242",
+                    "model": "21T",
+                    "name": "S1112",
+                    "processors": [
+                        {
+                            "name": "EJMT",
+                            "baseFrequency": "3.6",
+                            "maxFrequency": "4.0",
+                            "minSockets": 1,
+                            "maxSockets": 1,
+                            "coresPerSocket": 4,
+                            "cpw": 117300,
+                            "ibmiTier": "P05",
+                            "maxIbmiVirtualProcessors": 4
+                        }
+                    ]
+                },
+                {
                     "type": "9824",
                     "model": "22A",
                     "name": "S1122",

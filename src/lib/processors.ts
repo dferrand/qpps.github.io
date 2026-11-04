@@ -25,11 +25,14 @@ export interface IProcessor {
     coresPerSocket: number,
     rperf?: number,
     ibmiTier?: string,
+    // Computed by the sizer for the current LPARs
+    ibmiVps?: number,
     smt8Rperf?: number,
     smt4Rperf?: number,
     smt2Rperf?: number,
     stRperf?: number,
     maxCoresPerIbmiLpar?: number,
     maxAixIbmiCorePercent?: number,
+    maxIbmiVirtualProcessors?: number,
     viosOnlyIbmi: boolean
 }
