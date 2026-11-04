@@ -78,6 +78,7 @@
                 size="small"
                 kind="ghost"
                 iconDescription="Edit LPAR"
+                tooltipPosition="top"
                 on:click={() => {
                     editLpar(row);
                 }}
@@ -87,6 +88,7 @@
                 size="small"
                 kind="ghost"
                 iconDescription="Remove LPAR"
+                tooltipPosition="top"
                 on:click={() => {
                     removeLpar(row);
                 }}

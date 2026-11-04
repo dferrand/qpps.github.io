@@ -162,6 +162,7 @@
                 size="small"
                 kind="ghost"
                 iconDescription="Add LPAR"
+                tooltipPosition="top"
                 on:click={() => {
                     addLpar(row);
                 }}
