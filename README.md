@@ -28,5 +28,6 @@ npm run build    # static site written to ./build
 ## Deployment
 
 Pushes to `main` are built and deployed to GitHub Pages by `.github/workflows/deploy.yml`.
-In the repository settings, set Pages > Source to "GitHub Actions". The site is served from the
-domain root, so the repository must be named `<owner>.github.io`.
+In the repository settings, set Pages > Source to "GitHub Actions". The base path is derived from the repository name: a
+`<owner>.github.io` repository is served from the domain root, any other repository from `/<repo>`.
+For a local build under a sub-path, set `BASE_PATH`, e.g. `BASE_PATH=/qpps.github.io npm run build`.

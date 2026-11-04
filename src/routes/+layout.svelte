@@ -12,25 +12,26 @@
 
     import { page } from "$app/state";
     import { goto } from "$app/navigation";
+    import { resolve } from "$app/paths";
     import WarningModal from "./WarningModal.svelte";
     import { LogoGithub } from "carbon-icons-svelte";
 
     let selectedIndex: number;
     switch (page.url.pathname) {
-        case "/":
+        case resolve("/"):
             selectedIndex = 0;
             break;
-        case "/lpars":
+        case resolve("/lpars"):
             selectedIndex = 1;
             break;
     }
     const onChange = (e: CustomEvent) => {
         switch (selectedIndex) {
             case 0:
-                goto("/");
+                goto(resolve("/"));
                 break;
             case 1:
-                goto("/lpars");
+                goto(resolve("/lpars"));
                 break;
         }
     };
