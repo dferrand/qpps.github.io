@@ -16,7 +16,7 @@ Currently beta software.
 
 ## Development
 
-Requires Node.js 18 or later.
+Requires Node.js 20.19 or later (22 recommended).
 
 ```sh
 npm ci

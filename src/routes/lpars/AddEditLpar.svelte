@@ -15,7 +15,7 @@
         IIbmiLpar,
         ILinuxLpar,
         ILpar,
-    } from "$lib/lpar";
+    } from "#lib/lpar.ts";
 
     export let open: boolean;
     export let lpars: ILpar[];
@@ -122,7 +122,7 @@
             <RadioButton labelText="Linux" value="linux" />
         </RadioButtonGroup>
         {#if operatingSystem === "ibmi"}
-            <NumberInput label="CPW" bind:value={cpw} />
+            <NumberInput labelText="CPW" bind:value={cpw} />
         {:else if operatingSystem === "aix"}
             <RadioButtonGroup legendText="Threads per core" bind:selected={smt}>
                 <RadioButton labelText="SMT8" value="smt8" />
@@ -130,10 +130,10 @@
                 <RadioButton labelText="SMT2" value="smt2" />
                 <RadioButton labelText="ST" value="st" />
             </RadioButtonGroup>
-            <NumberInput label="rPerf" bind:value={rperf} />
+            <NumberInput labelText="rPerf" bind:value={rperf} />
         {:else}
             <NumberInput
-                label="Entitlement (processors)"
+                labelText="Entitlement (processors)"
                 bind:value={entitlement}
             />
         {/if}

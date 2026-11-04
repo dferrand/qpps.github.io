@@ -1,8 +1,9 @@
 <script lang="ts">
-    import type { ILpar } from "$lib/lpar";
+    import type { DataTableHeader } from "carbon-components-svelte/src/DataTable/DataTable.svelte";
+    import type { ILpar } from "#lib/lpar.ts";
     import type { IPowerData } from "../+layout";
-    import { page } from "$app/stores";
-    import type { IProcessor } from "$lib/processors";
+    import { page } from "$app/state";
+    import type { IProcessor } from "#lib/processors.ts";
     import { DataTable, Row } from "carbon-components-svelte";
     import { CellTower, CloudCeiling, License } from "carbon-icons-svelte";
 
@@ -11,7 +12,7 @@
     export let viosSize: string;
     export let viosEntitlement: number;
 
-    let data: IPowerData = $page.data as IPowerData;
+    let data: IPowerData = page.data as IPowerData;
 
     let viosQuantity: number;
     $: viosQuantity = parseInt(viosTopology);
@@ -199,13 +200,9 @@
         },
         [] as IProcessor[]
     );
-</script>
 
-<DataTable
-    title="Proposed processors"
-    sortable
-    zebra
-    headers={[
+    // Some columns are computed in the cell slot, so their keys are not row properties.
+    const headers: DataTableHeader[] = [
         { key: "modelName", value: "Model" },
         { key: "name", value: "Name" },
         { key: "baseFrequency", value: "Frequency (GHz)" },
@@ -215,7 +212,14 @@
         { key: "aixCores", value: "AIX cores" },
         { key: "linuxCores", value: "Linux cores" },
         { key: "viosCores", value: "VIOS cores" },
-    ]}
+    ];
+</script>
+
+<DataTable
+    title="Proposed processors"
+    sortable
+    zebra
+    {headers}
     rows={filteredProcessors}
 >
     <svelte:fragment slot="cell" let:row let:cell>

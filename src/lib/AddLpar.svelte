@@ -158,12 +158,12 @@
             <RadioButton labelText="Linux" value="linux" />
         </RadioButtonGroup>
         <NumberInput
-            label="Entitlement (processors)"
+            labelText="Entitlement (processors)"
             bind:value={entitlement}
             on:input={onEntitlementInput}
         />
         {#if operatingSystem === "ibmi"}
-            <NumberInput label="CPW" bind:value={cpw} on:input={onCpwInput} />
+            <NumberInput labelText="CPW" bind:value={cpw} on:input={onCpwInput} />
         {:else if operatingSystem === "aix"}
             <RadioButtonGroup
                 legendText="Threads per core"

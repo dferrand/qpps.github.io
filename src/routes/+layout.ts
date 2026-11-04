@@ -1,4 +1,4 @@
-import type { IModel, IProcessor, IProcessordFamily } from "$lib/processors";
+import type { IModel, IProcessor, IProcessordFamily } from "#lib/processors.ts";
 import type { Load } from "@sveltejs/kit";
 
 export interface IPowerData {
