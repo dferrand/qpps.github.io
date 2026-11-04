@@ -17,8 +17,7 @@
     let lpar: ILpar | undefined = undefined;
 
     const removeLpar = (row: DataTableRow) => {
-        lpars.splice(lpars.indexOf(row as ILpar), 1);
-        lpars = lpars;
+        lpars = lpars.filter((l) => l.id !== row.id);
     };
 
     const editLpar = (row: DataTableRow) => {

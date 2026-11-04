@@ -60,51 +60,37 @@
     };
 
     const onAdd = () => {
-        let baseLpar: IBaseLpar;
-        let newLpar = false;
-        if (lpar === undefined) {
-            (lpar as any) = {};
-            newLpar = true;
-            baseLpar = {
-                id: crypto.randomUUID(),
-                name: name,
-                os: operatingSystem as "ibmi" | "aix" | "linux",
-            };
-        } else {
-            baseLpar = {
-                id: lpar.id,
-                name: name,
-                os: operatingSystem as "ibmi" | "aix" | "linux",
-            };
-        }
-        for (const key in lpar) {
-            delete (lpar as any)[key];
-        }
+        const baseLpar: IBaseLpar = {
+            id: lpar === undefined ? crypto.randomUUID() : lpar.id,
+            name: name,
+            os: operatingSystem as "ibmi" | "aix" | "linux",
+        };
+        let updated: ILpar;
         switch (operatingSystem) {
-            case "ibmi":
-                Object.assign(lpar as ILpar, {
-                    ...baseLpar,
-                    cpw: BigInt(cpw),
-                });
-                break;
             case "aix":
-                Object.assign(lpar as ILpar, {
+                updated = {
                     ...baseLpar,
                     rperf: rperf,
                     smt: smt,
-                });
+                    os: "aix",
+                };
                 break;
             case "linux":
-                Object.assign(lpar as ILpar, {
+                updated = {
                     ...baseLpar,
                     entitlement: entitlement,
-                });
+                    os: "linux",
+                };
                 break;
+            default:
+                updated = { ...baseLpar, cpw: BigInt(cpw), os: "ibmi" };
         }
-        if (newLpar) {
-            lpars.push(lpar as ILpar);
-        }
-        lpars = lpars;
+        // Assign new objects/arrays rather than mutating in place, so that
+        // the LPAR list and the sizing see the change.
+        lpars =
+            lpar === undefined
+                ? [...lpars, updated]
+                : lpars.map((l) => (l.id === updated.id ? updated : l));
         open = false;
     };
 </script>
