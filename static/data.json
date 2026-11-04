@@ -26,7 +26,7 @@
                             "smt8Rperf": 292.9
                         },
                         {
-                            "name": "EPGQ",
+                            "name": "ERGQ",
                             "baseFrequency": "3.05",
                             "maxFrequency": "4.0",
                             "minSockets": 2,
@@ -42,7 +42,7 @@
                             "viosOnlyIbmi": true
                         },
                         {
-                            "name": "EPG8",
+                            "name": "EBG8",
                             "baseFrequency": "3.0",
                             "maxFrequency": "4.2",
                             "minSockets": 2,
@@ -58,7 +58,7 @@
                             "viosOnlyIbmi": true
                         },
                         {
-                            "name": "EPG9",
+                            "name": "EBG9",
                             "baseFrequency": "2.65",
                             "maxFrequency": "4.15",
                             "minSockets": 2,
@@ -74,7 +74,7 @@
                             "viosOnlyIbmi": true
                         },
                         {
-                            "name": "EPGA",
+                            "name": "EBGA",
                             "baseFrequency": "2.4",
                             "maxFrequency": "3.95",
                             "minSockets": 2,
