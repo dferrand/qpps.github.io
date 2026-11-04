@@ -20,6 +20,10 @@
                             "coresPerSocket": 4,
                             "cpw": 117300,
                             "ibmiTier": "P05",
+                            "stRperf": 39.9,
+                            "smt2Rperf": 81.8,
+                            "smt4Rperf": 119.9,
+                            "smt8Rperf": 148.8,
                             "maxIbmiVirtualProcessors": 4
                         },
                         {
@@ -31,6 +35,10 @@
                             "coresPerSocket": 10,
                             "cpw": 291250,
                             "ibmiTier": "P05",
+                            "stRperf": 95.4,
+                            "smt2Rperf": 185.6,
+                            "smt4Rperf": 247.0,
+                            "smt8Rperf": 298.7,
                             "maxIbmiVirtualProcessors": 4
                         }
                     ]
@@ -49,6 +57,10 @@
                             "coresPerSocket": 4,
                             "cpw": 117300,
                             "ibmiTier": "P05",
+                            "stRperf": 39.9,
+                            "smt2Rperf": 81.8,
+                            "smt4Rperf": 119.9,
+                            "smt8Rperf": 148.8,
                             "maxIbmiVirtualProcessors": 4
                         }
                     ]
