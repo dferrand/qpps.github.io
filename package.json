@@ -7,15 +7,12 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"deploy": "gh-pages -d build -t -r git@github.com:qpps/qpps.github.io.git"
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-static": "^1.0.0-next.41",
-		"@sveltejs/kit": "next",
+		"@sveltejs/adapter-static": "1.0.0-next.41",
+		"@sveltejs/kit": "1.0.0-next.468",
 		"carbon-components-svelte": "^0.70.0",
-		"gh-pages": "^4.0.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",
 		"svelte-preprocess": "^4.10.6",
@@ -25,5 +22,8 @@
 	"type": "module",
 	"dependencies": {
 		"carbon-icons-svelte": "^11.2.0"
+	},
+	"engines": {
+		"node": ">=18"
 	}
 }
